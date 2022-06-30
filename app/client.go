@@ -38,7 +38,6 @@ func getRedisClient() *redis.Client {
 	if cfg.Get("RedisPassword") != "" {
 
 		options = &redis.Options{
-			Network:  cfg.Get("RedisConnection"),
 			Addr:     cfg.Get("RedisAddress"),
 			Password: cfg.Get("RedisPassword"),
 			DB:       0,
@@ -49,7 +48,6 @@ func getRedisClient() *redis.Client {
 		//
 		// Though this is not recommended
 		options = &redis.Options{
-			Network: cfg.Get("RedisConnection"),
 			Addr:    cfg.Get("RedisAddress"),
 			DB:      0,
 		}
